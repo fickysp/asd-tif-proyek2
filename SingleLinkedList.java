@@ -34,6 +34,18 @@ public class SingleLinkedList {
         return tail;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node temp = this.head;
+        while (temp != null) {
+            sb.append(temp.data);
+            if (temp.next != null) sb.append(", ");
+            temp = temp.next;
+        }
+        return sb.toString();
+    }
+
     public void add(String dt){
         Node data = new Node(dt);
         if (head == null) {
